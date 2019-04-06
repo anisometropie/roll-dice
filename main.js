@@ -1,5 +1,6 @@
 const { get } = require("lodash");
 const { red, normal } = require("./dice.js");
+const { gcd } = require("math.js");
 
 const rollDie = die => {
   const rand = Math.random();

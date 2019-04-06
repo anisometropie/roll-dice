@@ -1,0 +1,6 @@
+.result {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

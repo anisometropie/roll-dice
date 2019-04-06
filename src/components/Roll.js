@@ -4,6 +4,7 @@ import { gcd } from 'computation/math.js'
 import { red, blue, olive, yellow, magenta, normal } from 'computation/dice.js'
 import { runExperiment } from 'computation/experiment.js'
 import DiceRow from 'components/DiceRow'
+import './Roll.css'
 
 class Roll extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Roll extends React.Component {
         magenta,
         magenta
       ],
-      numberOfRolls: 100
+      numberOfRolls: 100000
     }
   }
 
@@ -38,9 +39,13 @@ class Roll extends React.Component {
   }
 
   render() {
-    const { resultsByCount } = this.state
+    const { resultsByCount, numberOfRolls } = this.state
     const resultsJSX = resultsByCount.map((result, index) => (
-      <DiceRow key={index} roll={result.roll} />
+      <div className="result">
+        <div>{`${result.count}/${numberOfRolls} (${(100 * result.count) /
+          numberOfRolls} %)`}</div>
+        <DiceRow key={index} roll={result.roll} />
+      </div>
     ))
     return (
       <div>

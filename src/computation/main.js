@@ -1,9 +1,9 @@
-const util = require('util')
-const { gcd } = require('./math.js')
-const { get, isEqual, find, sortBy } = require('lodash')
-const { red, blue, olive, yellow, magenta, normal } = require('./dice.js')
-const { runExperiment } = require('./experiment.js')
-const { rollDie, rollDice } = require('./roll.js')
+import util from 'util'
+import { gcd } from './math.js'
+import { get, isEqual, find, sortBy } from 'lodash'
+import { red, blue, olive, yellow, magenta, normal } from './dice.js'
+import { runExperiment } from './experiment.js'
+import { rollDie, rollDice } from './roll.js'
 
 const dice = [
   red,

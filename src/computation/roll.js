@@ -1,4 +1,4 @@
-const rollDie = die => {
+export const rollDie = die => {
   const rand = Math.random()
   let result
   die.reduce((acc, cur) => {
@@ -11,8 +11,6 @@ const rollDie = die => {
   return result
 }
 
-rollDice = (...dice) => {
+export const rollDice = (...dice) => {
   return dice.reduce((acc, cur) => [...acc, rollDie(cur)], [])
 }
-
-module.exports = { rollDie, rollDice }

@@ -1,6 +1,6 @@
-const { get, isEqual, find, sortBy } = require('lodash')
+import { isEqual, find, sortBy } from 'lodash'
 
-const runExperiment = (dice, numberOfRolls) => {
+export const runExperiment = (dice, numberOfRolls) => {
   let results = []
   for (let i = 0; i < numberOfRolls; i++) {
     const roll = rollDice(...dice).sort()
@@ -17,5 +17,3 @@ const runExperiment = (dice, numberOfRolls) => {
   const resultsByCount = sortBy(results, 'count')
   return { resultsByRoll, resultsByCount }
 }
-
-module.exports = { runExperiment }

@@ -13,8 +13,7 @@
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.8",
-    "util": "^0.11.1"
+    "react-scripts": "^2.1.8"
   },
   "browserslist": [
     ">0.2%",

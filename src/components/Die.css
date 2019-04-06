@@ -1,0 +1,7 @@
+.die {
+  width: 20px;
+  height: 20px;
+  background-color: lightblue;
+  border: 1px solid black;
+  text-align: center;
+}

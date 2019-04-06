@@ -1,0 +1,7 @@
+.diceRow {
+  width: 250px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,4 +1,5 @@
 import { isEqual, find, sortBy } from 'lodash'
+import { rollDice } from './roll'
 
 export const runExperiment = (dice, numberOfRolls) => {
   let results = []

@@ -1,8 +1,7 @@
 import React from 'react'
 import { isEqual, find } from 'lodash'
-import { gcd } from 'computation/math.js'
 import { red, blue, olive, yellow, magenta, normal } from 'computation/dice.js'
-import { runExperiment } from 'computation/experiment.js'
+import { api } from 'computation/api.js'
 import DiceRow from 'components/DiceRow'
 import './Roll.css'
 
@@ -24,18 +23,25 @@ class Roll extends React.Component {
         magenta,
         magenta
       ],
-      numberOfRolls: 10000000
+      numberOfRolls: 10000
     }
   }
 
   roll = () => {
     const { dice, numberOfRolls } = this.state
-    const { resultsByRoll, resultsByCount } = runExperiment(dice, numberOfRolls)
-    this.setState({
-      resultsByRoll,
-      resultsByCount
-    })
-    console.log(resultsByCount)
+    api
+      .compute({ dice, numberOfRolls })
+      .then(res => res.json())
+      .then(data => {
+        const { resultsByRoll, resultsByCount } = data
+        this.setState({
+          resultsByRoll,
+          resultsByCount
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {

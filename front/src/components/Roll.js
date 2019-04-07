@@ -24,7 +24,7 @@ class Roll extends React.Component {
         magenta,
         magenta
       ],
-      numberOfRolls: 100000
+      numberOfRolls: 10000000
     }
   }
 
